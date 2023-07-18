@@ -38,7 +38,6 @@ class HumanPlayer < Player
     def initialize(name)
 
         @weapon_level = 1
-        super(@name, @life_points)
         @life_points = 100
         @name = name
     end
