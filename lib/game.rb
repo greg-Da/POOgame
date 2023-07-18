@@ -78,9 +78,13 @@ class Game
         elsif action == 's'
             @human_player.search_health_pack
         else
-            @human_player.attacks(@enemies_in_sight[action.to_i])
-            if @enemies_in_sight[action.to_i].life_points <= 0
-                kill_player(@enemies_in_sight[action.to_i])
+            if @enemies_in_sight[action.to_i] != nil
+                @human_player.attacks(@enemies_in_sight[action.to_i])
+                if @enemies_in_sight[action.to_i].life_points <= 0
+                    kill_player(@enemies_in_sight[action.to_i])
+                end
+            else
+                puts "Pas une option, tu viens de perdre un tour"
             end
         end
         
